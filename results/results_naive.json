@@ -1,0 +1,58 @@
+{
+  "method": "Naive Sequential (No Replay)",
+  "configuration": {
+    "epochs_per_t": 10,
+    "batch_size": 8,
+    "lr": 0.0001,
+    "lambda_adv": 0.1,
+    "lambda_priv": 0.1
+  },
+  "source_domains": [
+    "books",
+    "dvd",
+    "electronics"
+  ],
+  "target_domain": "kitchen",
+  "results_over_time": [
+    {
+      "timestep": 1,
+      "new_domain": "books",
+      "accuracies": {
+        "books": 100.0,
+        "kitchen": 74.75
+      }
+    },
+    {
+      "timestep": 2,
+      "new_domain": "dvd",
+      "accuracies": {
+        "books": 96.75,
+        "dvd": 97.85,
+        "kitchen": 80.55
+      }
+    },
+    {
+      "timestep": 3,
+      "new_domain": "electronics",
+      "accuracies": {
+        "books": 96.0,
+        "dvd": 94.9,
+        "electronics": 97.4,
+        "kitchen": 84.9
+      }
+    }
+  ],
+  "forgetting_metrics": {
+    "books": 4.0,
+    "dvd": 2.95,
+    "average": 3.475
+  },
+  "final_accuracies": {
+    "books": 96.0,
+    "dvd": 94.9,
+    "electronics": 97.4,
+    "kitchen": 84.9
+  },
+  "avg_source_acc": 96.1,
+  "training_time_min": 2.66
+}

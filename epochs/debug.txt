@@ -1,0 +1,118 @@
+
+(ta-sentiment) c:\ITS\SEMESTER 8\TA>python src/debug_domain_id.py
+
+============================================================
+DEBUG — Domain ID Diagnostic
+============================================================
+
+Building vocabulary...
+Vocabulary built: 5000 features
+
+
+============================================================
+Sequential Domain Loader Ready
+  Source domains : ['books', 'dvd', 'electronics']
+  Target domain  : kitchen
+  Total timesteps: 3
+============================================================
+
+  [Buffer] Initialized: 500 total | 166 slots/domain | 3 domains
+============================================================
+TEST 1: Domain IDs assigned by sequential loader
+============================================================
+
+[Timestep 1] New domain: 'books'
+  Seen so far: ['books']
+  Train samples : 2000 | Batches: 250 | domain_id: 0
+  Test loaders  : ['books', 'kitchen']
+
+Timestep 1 — domain 'books':
+  domain_id in batch (d): [0]
+  Expected real id      : 0
+  Match?                : ✓
+
+[Timestep 2] New domain: 'dvd'
+  Seen so far: ['books', 'dvd']
+  Train samples : 2000 | Batches: 250 | domain_id: 1
+  Test loaders  : ['books', 'dvd', 'kitchen']
+
+Timestep 2 — domain 'dvd':
+  domain_id in batch (d): [1]
+  Expected real id      : 1
+  Match?                : ✓
+
+[Timestep 3] New domain: 'electronics'
+  Seen so far: ['books', 'dvd', 'electronics']
+  Train samples : 2000 | Batches: 250 | domain_id: 2
+  Test loaders  : ['books', 'dvd', 'electronics', 'kitchen']
+
+Timestep 3 — domain 'electronics':
+  domain_id in batch (d): [2]
+  Expected real id      : 2
+  Match?                : ✓
+
+============================================================
+TEST 2: Domain IDs stored in replay buffer
+============================================================
+
+[Timestep 1] New domain: 'books'
+  Seen so far: ['books']
+  Train samples : 2000 | Batches: 250 | domain_id: 0
+  Test loaders  : ['books', 'kitchen']
+  [Buffer] Domain 0: stored 166/166 samples
+
+Timestep 1 — domain 'books' (real id=0):
+  Stored domain_id in buffer: 0
+  Match with real id?        : ✓
+
+[Timestep 2] New domain: 'dvd'
+  Seen so far: ['books', 'dvd']
+  Train samples : 2000 | Batches: 250 | domain_id: 1
+  Test loaders  : ['books', 'dvd', 'kitchen']
+  [Buffer] Domain 1: stored 166/166 samples
+
+Timestep 2 — domain 'dvd' (real id=1):
+  Stored domain_id in buffer: 1
+  Match with real id?        : ✓
+
+[Timestep 3] New domain: 'electronics'
+  Seen so far: ['books', 'dvd', 'electronics']
+  Train samples : 2000 | Batches: 250 | domain_id: 2
+  Test loaders  : ['books', 'dvd', 'electronics', 'kitchen']
+  [Buffer] Domain 2: stored 166/166 samples
+
+Timestep 3 — domain 'electronics' (real id=2):
+  Stored domain_id in buffer: 2
+  Match with real id?        : ✓
+
+============================================================
+TEST 3: Domain IDs returned by sample()
+============================================================
+
+Sampled batch domain IDs: [0, 1, 2]
+Expected               : [0, 1, 2] (all domains)
+Match?                 : ✓
+
+Distribution in sample:
+  Domain 0: 5 samples
+  Domain 1: 5 samples
+  Domain 2: 5 samples
+
+============================================================
+TEST 4: Model private extractor indexing
+============================================================
+
+Simulating forward pass with replay batch:
+  dr (domain ids in replay): [0, 1, 2]
+  model.num_source_domains : 3
+  Ep[0] will process 5 samples (domain_id=0)
+  Ep[1] will process 5 samples (domain_id=1)
+  Ep[2] will process 5 samples (domain_id=2)
+
+============================================================
+DEBUG COMPLETE
+============================================================
+
+Look for any '✗ MISMATCH!' above — that's the bug location.
+
+(ta-sentiment) c:\ITS\SEMESTER 8\TA>

@@ -1,0 +1,355 @@
+{
+  "method": "Oracle (Joint Training)",
+  "configuration": {
+    "epochs": 30,
+    "batch_size": 8,
+    "lr": 0.0001
+  },
+  "source_domains": [
+    "books",
+    "dvd",
+    "electronics"
+  ],
+  "target_domain": "kitchen",
+  "history": [
+    {
+      "epoch": 1,
+      "loss_cls": 0.6529045393864313,
+      "loss_dom": 0.15404306691947084,
+      "accs": {
+        "books": 82.75,
+        "dvd": 83.4,
+        "electronics": 88.7,
+        "kitchen": 84.15
+      }
+    },
+    {
+      "epoch": 2,
+      "loss_cls": 0.3521189825758338,
+      "loss_dom": 0.0005871399496616808,
+      "accs": {
+        "books": 89.9,
+        "dvd": 90.5,
+        "electronics": 93.9,
+        "kitchen": 85.4
+      }
+    },
+    {
+      "epoch": 3,
+      "loss_cls": 0.15839087633912763,
+      "loss_dom": 9.580299525097758e-06,
+      "accs": {
+        "books": 91.85,
+        "dvd": 92.65,
+        "electronics": 94.0,
+        "kitchen": 85.95
+      }
+    },
+    {
+      "epoch": 4,
+      "loss_cls": 0.06445459907703723,
+      "loss_dom": 1.5092859943888943e-06,
+      "accs": {
+        "books": 91.75,
+        "dvd": 94.2,
+        "electronics": 93.9,
+        "kitchen": 85.8
+      }
+    },
+    {
+      "epoch": 5,
+      "loss_cls": 0.03840102414175635,
+      "loss_dom": 2.6604957488866416e-07,
+      "accs": {
+        "books": 93.15,
+        "dvd": 95.1,
+        "electronics": 95.15,
+        "kitchen": 85.5
+      }
+    },
+    {
+      "epoch": 6,
+      "loss_cls": 0.0269285466014976,
+      "loss_dom": 4.4385362835204966e-08,
+      "accs": {
+        "books": 93.85,
+        "dvd": 95.1,
+        "electronics": 95.4,
+        "kitchen": 85.8
+      }
+    },
+    {
+      "epoch": 7,
+      "loss_cls": 0.009930239801550974,
+      "loss_dom": 4.609422785980162e-09,
+      "accs": {
+        "books": 93.15,
+        "dvd": 95.6,
+        "electronics": 95.1,
+        "kitchen": 86.25
+      }
+    },
+    {
+      "epoch": 8,
+      "loss_cls": 0.006205531832970735,
+      "loss_dom": 1.152355956435258e-09,
+      "accs": {
+        "books": 94.05,
+        "dvd": 95.5,
+        "electronics": 95.5,
+        "kitchen": 86.15
+      }
+    },
+    {
+      "epoch": 9,
+      "loss_cls": 0.006166336504769598,
+      "loss_dom": 5.960463885420116e-11,
+      "accs": {
+        "books": 94.35,
+        "dvd": 94.6,
+        "electronics": 96.05,
+        "kitchen": 85.75
+      }
+    },
+    {
+      "epoch": 10,
+      "loss_cls": 0.006364922133267176,
+      "loss_dom": 4.3710058150736587e-10,
+      "accs": {
+        "books": 93.6,
+        "dvd": 94.6,
+        "electronics": 95.45,
+        "kitchen": 85.6
+      }
+    },
+    {
+      "epoch": 11,
+      "loss_cls": 0.003244663007442265,
+      "loss_dom": 9.934106278327212e-11,
+      "accs": {
+        "books": 94.1,
+        "dvd": 94.5,
+        "electronics": 96.0,
+        "kitchen": 85.9
+      }
+    },
+    {
+      "epoch": 12,
+      "loss_cls": 0.006848723633884978,
+      "loss_dom": 2.384184926521963e-10,
+      "accs": {
+        "books": 93.5,
+        "dvd": 94.85,
+        "electronics": 94.45,
+        "kitchen": 85.15
+      }
+    },
+    {
+      "epoch": 13,
+      "loss_cls": 0.0004628319031990671,
+      "loss_dom": 0.0,
+      "accs": {
+        "books": 94.3,
+        "dvd": 94.5,
+        "electronics": 96.15,
+        "kitchen": 85.4
+      }
+    },
+    {
+      "epoch": 14,
+      "loss_cls": 0.0007147498786803878,
+      "loss_dom": 3.973642511330884e-11,
+      "accs": {
+        "books": 94.45,
+        "dvd": 94.95,
+        "electronics": 95.45,
+        "kitchen": 85.6
+      }
+    },
+    {
+      "epoch": 15,
+      "loss_cls": 0.005051970600733464,
+      "loss_dom": 0.0,
+      "accs": {
+        "books": 92.4,
+        "dvd": 95.45,
+        "electronics": 93.95,
+        "kitchen": 84.9
+      }
+    },
+    {
+      "epoch": 16,
+      "loss_cls": 0.0014345054998853649,
+      "loss_dom": 0.0,
+      "accs": {
+        "books": 94.7,
+        "dvd": 94.9,
+        "electronics": 95.75,
+        "kitchen": 85.3
+      }
+    },
+    {
+      "epoch": 17,
+      "loss_cls": 0.0023498847075686343,
+      "loss_dom": 0.0,
+      "accs": {
+        "books": 94.1,
+        "dvd": 95.45,
+        "electronics": 94.85,
+        "kitchen": 85.0
+      }
+    },
+    {
+      "epoch": 18,
+      "loss_cls": 0.00552459419404318,
+      "loss_dom": 0.0,
+      "accs": {
+        "books": 95.2,
+        "dvd": 94.6,
+        "electronics": 95.3,
+        "kitchen": 85.5
+      }
+    },
+    {
+      "epoch": 19,
+      "loss_cls": 0.0014042275730956663,
+      "loss_dom": 0.0,
+      "accs": {
+        "books": 94.0,
+        "dvd": 95.2,
+        "electronics": 94.9,
+        "kitchen": 85.55
+      }
+    },
+    {
+      "epoch": 20,
+      "loss_cls": 0.0012170947935243686,
+      "loss_dom": 0.0,
+      "accs": {
+        "books": 95.85,
+        "dvd": 94.15,
+        "electronics": 96.35,
+        "kitchen": 84.8
+      }
+    },
+    {
+      "epoch": 21,
+      "loss_cls": 0.0001591961557150429,
+      "loss_dom": 0.0,
+      "accs": {
+        "books": 96.1,
+        "dvd": 95.0,
+        "electronics": 96.2,
+        "kitchen": 84.6
+      }
+    },
+    {
+      "epoch": 22,
+      "loss_cls": 0.0004587616472102608,
+      "loss_dom": 0.0,
+      "accs": {
+        "books": 96.0,
+        "dvd": 94.75,
+        "electronics": 96.45,
+        "kitchen": 84.65
+      }
+    },
+    {
+      "epoch": 23,
+      "loss_cls": 0.0019107977553953716,
+      "loss_dom": 0.0,
+      "accs": {
+        "books": 95.5,
+        "dvd": 95.4,
+        "electronics": 95.8,
+        "kitchen": 85.45
+      }
+    },
+    {
+      "epoch": 24,
+      "loss_cls": 0.001006516768995901,
+      "loss_dom": 0.0,
+      "accs": {
+        "books": 95.5,
+        "dvd": 93.9,
+        "electronics": 95.9,
+        "kitchen": 84.7
+      }
+    },
+    {
+      "epoch": 25,
+      "loss_cls": 0.003547392910971586,
+      "loss_dom": 0.0,
+      "accs": {
+        "books": 94.95,
+        "dvd": 95.55,
+        "electronics": 95.55,
+        "kitchen": 84.8
+      }
+    },
+    {
+      "epoch": 26,
+      "loss_cls": 0.0037718147180418964,
+      "loss_dom": 0.0,
+      "accs": {
+        "books": 94.65,
+        "dvd": 95.25,
+        "electronics": 94.95,
+        "kitchen": 84.9
+      }
+    },
+    {
+      "epoch": 27,
+      "loss_cls": 0.007846299601798442,
+      "loss_dom": 0.0,
+      "accs": {
+        "books": 95.2,
+        "dvd": 94.75,
+        "electronics": 95.2,
+        "kitchen": 84.75
+      }
+    },
+    {
+      "epoch": 28,
+      "loss_cls": 0.006812553864447125,
+      "loss_dom": 0.0,
+      "accs": {
+        "books": 95.55,
+        "dvd": 94.45,
+        "electronics": 95.95,
+        "kitchen": 85.05
+      }
+    },
+    {
+      "epoch": 29,
+      "loss_cls": 0.005251010337894556,
+      "loss_dom": 0.0,
+      "accs": {
+        "books": 94.5,
+        "dvd": 94.6,
+        "electronics": 95.2,
+        "kitchen": 84.8
+      }
+    },
+    {
+      "epoch": 30,
+      "loss_cls": 0.000682147587212795,
+      "loss_dom": 0.0,
+      "accs": {
+        "books": 94.9,
+        "dvd": 95.05,
+        "electronics": 94.5,
+        "kitchen": 84.7
+      }
+    }
+  ],
+  "final_accuracies": {
+    "books": 94.9,
+    "dvd": 95.05,
+    "electronics": 94.5,
+    "kitchen": 84.7
+  },
+  "avg_source_acc": 94.81666666666666,
+  "best_target_acc": 86.25,
+  "training_time_min": 13.55316758553187
+}

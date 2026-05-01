@@ -1,0 +1,63 @@
+{
+  "method": "Experience Replay (Proposed)",
+  "configuration": {
+    "epochs_per_t": 10,
+    "batch_size": 8,
+    "lr": 0.0001,
+    "lambda_adv": 0.1,
+    "lambda_priv": 0.1,
+    "beta_replay": 1.0,
+    "buffer_capacity": 500
+  },
+  "source_domains": [
+    "books",
+    "dvd",
+    "electronics"
+  ],
+  "target_domain": "kitchen",
+  "results_over_time": [
+    {
+      "timestep": 1,
+      "new_domain": "books",
+      "accuracies": {
+        "books": 100.0,
+        "kitchen": 75.05
+      },
+      "buffer_size": 166
+    },
+    {
+      "timestep": 2,
+      "new_domain": "dvd",
+      "accuracies": {
+        "books": 97.8,
+        "dvd": 94.65,
+        "kitchen": 80.0
+      },
+      "buffer_size": 332
+    },
+    {
+      "timestep": 3,
+      "new_domain": "electronics",
+      "accuracies": {
+        "books": 95.4,
+        "dvd": 94.65,
+        "electronics": 93.1,
+        "kitchen": 85.15
+      },
+      "buffer_size": 498
+    }
+  ],
+  "forgetting_metrics": {
+    "books": 4.6,
+    "dvd": 0.0,
+    "average": 2.3
+  },
+  "final_accuracies": {
+    "books": 95.4,
+    "dvd": 94.65,
+    "electronics": 93.1,
+    "kitchen": 85.15
+  },
+  "avg_source_acc": 94.3833,
+  "training_time_min": 3.91
+}
