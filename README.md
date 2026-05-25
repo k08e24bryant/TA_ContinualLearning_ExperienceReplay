@@ -21,7 +21,7 @@ GitHub: [k08e24bryant/TA_ContinualLearning_ExperienceReplay](https://github.com/
 
 Penelitian ini berangkat dari satu masalah praktis: algoritma MS-UDA (Multi-Source Unsupervised Domain Adaptation) dalam setting aslinya termasuk WS-UDA yang dipublikasikan Dai et al. (2020) membutuhkan semua data domain tersedia dan diproses secara bersamaan (*joint training*). Ini membuat computational cost-nya tinggi dan tidak realistis untuk deployment di dunia nyata, di mana data dari domain baru datang secara bertahap dari waktu ke waktu.
 
-Dari situ muncul pertanyaan: apakah ada cara untuk menjalankan MS-UDA secara sequential — domain datang satu per satu — dengan computational cost yang lebih rendah, tanpa mengorbankan performa secara signifikan?
+Dari situ muncul pertanyaan: apakah ada cara untuk menjalankan MS-UDA secara sequential domain datang satu per satu dengan computational cost yang lebih rendah, tanpa mengorbankan performa secara signifikan?
 
 Salah satu alternatif yang dieksplorasi adalah **memory replay**: menyimpan sebagian kecil sampel dari domain lama ke dalam buffer memori, lalu memutarnya kembali saat melatih domain baru. Pendekatan ini dipilih karena bersifat adaptive (ukuran buffer bisa disesuaikan), tidak membutuhkan akses ke semua data historis, dan secara teori memiliki computational cost yang lebih ringan dibandingkan joint training.
 
@@ -34,25 +34,25 @@ Sebelum diimplementasikan, klaim ini diverifikasi terlebih dahulu melalui **anal
 | Experience Replay | O((N+B)×K×E_s×nc) | 13,038 | 3.91 menit |
 | Naive Sequential | O(N×K×E_s×nc) | 7,823 | 2.66 menit |
 
-Terbukti bahwa Experience Replay memiliki computational cost yang jauh lebih rendah dari Oracle maupun WS-UDA paper — **92.4% lebih cepat dari Oracle** dan **91.9% lebih cepat dari WS-UDA Paper** dengan hanya menyimpan **8.33% dari total data** di buffer.
+Terbukti bahwa Experience Replay memiliki computational cost yang jauh lebih rendah dari Oracle maupun WS-UDA paper **92.4% lebih cepat dari Oracle** dan **91.9% lebih cepat dari WS-UDA Paper** dengan hanya menyimpan **8.33% dari total data** di buffer.
 
 ---
 
 ## Hipotesis
 
-Dengan computational cost yang lebih rendah, Experience Replay tetap dapat mempertahankan performa domain adaptation pada konteks Sentiment Analysis — performa tidak turun secara signifikan dibandingkan joint training, atau bahkan bisa melebihinya.
+Dengan computational cost yang lebih rendah, Experience Replay tetap dapat mempertahankan performa domain adaptation pada konteks Sentiment Analysis performa tidak turun secara signifikan dibandingkan joint training, atau bahkan bisa melebihinya.
 
 ---
 
 ## Pembuktian Hipotesis
 
-Hipotesis dibuktikan melalui eksperimen menggunakan **dataset yang sama dengan paper WS-UDA** — Amazon Review Benchmark (Blitzer et al. 2007) — dengan empat domain: Books, DVD, Electronics, dan Kitchen. Tiga metode dibandingkan dalam satu setting yang konsisten:
+Hipotesis dibuktikan melalui eksperimen menggunakan **dataset yang sama dengan paper WS-UDA** Amazon Review Benchmark (Blitzer et al. 2007) dengan empat domain: Books, DVD, Electronics, dan Kitchen. Tiga metode dibandingkan dalam satu setting yang konsisten:
 
-**Oracle** merepresentasikan joint training (upper bound) — semua domain dilatih sekaligus, tidak mungkin forgetting. Ini adalah patokan performa terbaik.
+**Oracle** merepresentasikan joint training (upper bound) semua domain dilatih sekaligus, tidak mungkin forgetting. Ini adalah patokan performa terbaik.
 
-**Naive Sequential** membuktikan bahwa forgetting memang terjadi ketika WS-UDA dijalankan secara sequential tanpa mitigasi apapun — ini lower bound yang menunjukkan masalah nyata ada.
+**Naive Sequential** membuktikan bahwa forgetting memang terjadi ketika WS-UDA dijalankan secara sequential tanpa mitigasi apapun ini lower bound yang menunjukkan masalah nyata ada.
 
-**Experience Replay** adalah metode yang diusulkan — sequential seperti Naive, tapi ditambah buffer memori yang diputar ulang saat training.
+**Experience Replay** adalah metode yang diusulkan sequential seperti Naive, tapi ditambah buffer memori yang diputar ulang saat training.
 
 ### Hasil Eksperimen Utama
 
@@ -64,10 +64,10 @@ Hipotesis dibuktikan melalui eksperimen menggunakan **dataset yang sama dengan p
 
 Hasilnya menjawab hipotesis dengan jelas:
 
-- Forgetting turun **33.9%** (3.48% → 2.30%) — mitigasi berhasil
+- Forgetting turun **33.9%** (3.48% → 2.30%) mitigasi berhasil
 - DVD forgetting **eliminasi 100%** (2.95% → 0.00%)
 - Target accuracy Replay **85.15% melampaui Oracle 84.70%** (+0.45%)
-- Selisih Replay vs Oracle hanya **−0.44%** pada avg source accuracy — tidak turun signifikan
+- Selisih Replay vs Oracle hanya **−0.44%** pada avg source accuracy tidak turun signifikan
 - Replay **92.4% lebih cepat** dari Oracle dengan hanya **8.33% data tersimpan**
 
 Hipotesis **terbukti**.
@@ -80,7 +80,7 @@ Untuk memvalidasi implementasi dan memberikan konteks perbandingan yang lebih le
 
 ### Apa itu Leave-One-Out?
 
-Paper asli menjalankan **4 eksperimen terpisah** — setiap domain pernah menjadi target sekali:
+Paper asli menjalankan **4 eksperimen terpisah** setiap domain pernah menjadi target sekali:
 
 ```
 Run 1: Books    = target  | source: DVD, Electronics, Kitchen
@@ -149,21 +149,21 @@ Ablation study dilakukan untuk menemukan konfigurasi optimal Experience Replay.
 | D1 | 300 | 1.0 | 95.27 | 84.40 | 2.375 | Src+0.89% Tgt−0.75% |
 | D2 | 1000 | 1.0 | 94.22 | 84.65 | 2.95 | Src−0.16% Tgt−0.50% |
 | D3 | 2000 | 1.0 | 94.32 | 83.60 | 2.45 | Src−0.06% Tgt−1.55% |
-| **Proposed** | **500** | **1.0** | **94.38** | **85.15** | **2.30** | **★ BEST** |
+| **Proposed** | **500** | **1.0** | **94.38** | **85.15** | **2.30** | ** BEST** |
 
-Buffer=500 terkonfirmasi sebagai **sweet spot**. Group D tidak menemukan kombinasi yang lebih baik dari proposed method — ini memvalidasi pilihan hyperparameter yang digunakan.
+Buffer=500 terkonfirmasi sebagai **sweet spot**. Group D tidak menemukan kombinasi yang lebih baik dari proposed method ini memvalidasi pilihan hyperparameter yang digunakan.
 
 ---
 
 ## Version Tracking
 
-### v1 — Baseline Implementation
+### v1 Baseline Implementation
 WS-UDA sequential tanpa mitigasi. Membuktikan catastrophic forgetting terjadi. Forgetting rate: **3.48%**. File: `train_naive.py`.
 
-### v2 — Experience Replay Basic
+### v2 Experience Replay Basic
 WS-UDA + per-domain replay buffer (500 slots, reservoir sampling, β=1.0). Forgetting turun ke **2.30%**. Bug domain_id_offset ditemukan dan diperbaiki — forgetting turun dari 14.62% ke 2.30% setelah fix. File: `train_replay.py`, `replay_buffer.py`.
 
-### v3 — Full Evaluation + Ablation
+### v3 Full Evaluation + Ablation
 Replikasi paper WS-UDA (leave-one-out, multi-class discriminator). Ablation study Group B (buffer size), Group C (beta), Group D (best combination). Complexity analysis Big-O teoritis + empiris. File: `train_wsuda_paper.py`, `train_ablation.py`, `run_all_experiments.py`, `complexity_analysis.py`.
 
 ---
