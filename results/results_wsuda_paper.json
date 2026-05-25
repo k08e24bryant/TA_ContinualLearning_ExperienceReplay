@@ -1,0 +1,633 @@
+{
+  "method": "WS-UDA Paper Replication",
+  "reference": "Dai et al. (2020) AAAI",
+  "evaluation": "Leave-One-Out",
+  "configuration": {
+    "batch_size": 8,
+    "lr": 0.0001,
+    "n_critic": 5,
+    "lambda_adv": 1.0,
+    "max_epochs": 50,
+    "patience": 10,
+    "discriminator": "multi-class (4 classes)"
+  },
+  "run_results": {
+    "books": {
+      "target_domain": "books",
+      "source_domains": [
+        "dvd",
+        "electronics",
+        "kitchen"
+      ],
+      "best_val_acc": 78.5,
+      "best_test_acc": 78.9,
+      "training_time_min": 5.3,
+      "history": [
+        {
+          "epoch": 1,
+          "val_acc": 75.9,
+          "test_acc": 77.3,
+          "loss_cls": 0.6479440914988518,
+          "loss_dom": 3.912020851771037
+        },
+        {
+          "epoch": 2,
+          "val_acc": 76.1,
+          "test_acc": 77.5,
+          "loss_cls": 0.3369411944374442,
+          "loss_dom": 4.2058177099227905
+        },
+        {
+          "epoch": 3,
+          "val_acc": 77.4,
+          "test_acc": 78.2,
+          "loss_cls": 0.22132889010586465,
+          "loss_dom": 4.157881651560466
+        },
+        {
+          "epoch": 4,
+          "val_acc": 77.5,
+          "test_acc": 78.8,
+          "loss_cls": 0.10663589271897217,
+          "loss_dom": 2.701834099451701
+        },
+        {
+          "epoch": 5,
+          "val_acc": 78.5,
+          "test_acc": 78.9,
+          "loss_cls": 0.0659083070265818,
+          "loss_dom": 2.584814792315165
+        },
+        {
+          "epoch": 6,
+          "val_acc": 78.0,
+          "test_acc": 78.1,
+          "loss_cls": 0.044522140106658,
+          "loss_dom": 2.5607386894226076
+        },
+        {
+          "epoch": 7,
+          "val_acc": 77.6,
+          "test_acc": 77.1,
+          "loss_cls": 0.01723004460618419,
+          "loss_dom": 2.5481167112986247
+        },
+        {
+          "epoch": 8,
+          "val_acc": 77.5,
+          "test_acc": 76.5,
+          "loss_cls": 0.015957954675326316,
+          "loss_dom": 2.5398944743474323
+        },
+        {
+          "epoch": 9,
+          "val_acc": 77.5,
+          "test_acc": 77.0,
+          "loss_cls": 0.024514754943082827,
+          "loss_dom": 2.5327491607666017
+        },
+        {
+          "epoch": 10,
+          "val_acc": 78.1,
+          "test_acc": 76.6,
+          "loss_cls": 0.0046175663184303585,
+          "loss_dom": 2.5385400444666546
+        },
+        {
+          "epoch": 11,
+          "val_acc": 77.7,
+          "test_acc": 77.0,
+          "loss_cls": 0.004108205228051012,
+          "loss_dom": 2.534450531959534
+        },
+        {
+          "epoch": 12,
+          "val_acc": 78.5,
+          "test_acc": 76.8,
+          "loss_cls": 0.0019059632830324606,
+          "loss_dom": 2.5555784301757813
+        },
+        {
+          "epoch": 13,
+          "val_acc": 73.2,
+          "test_acc": 71.0,
+          "loss_cls": 0.14812843909824108,
+          "loss_dom": 186.15204019991558
+        },
+        {
+          "epoch": 14,
+          "val_acc": 73.0,
+          "test_acc": 72.2,
+          "loss_cls": 0.30956273717428234,
+          "loss_dom": 99.80866284688314
+        },
+        {
+          "epoch": 15,
+          "val_acc": 76.0,
+          "test_acc": 75.8,
+          "loss_cls": 0.17280762391558327,
+          "loss_dom": 19.645153843243918
+        }
+      ]
+    },
+    "dvd": {
+      "target_domain": "dvd",
+      "source_domains": [
+        "books",
+        "electronics",
+        "kitchen"
+      ],
+      "best_val_acc": 80.6,
+      "best_test_acc": 78.9,
+      "training_time_min": 5.04,
+      "history": [
+        {
+          "epoch": 1,
+          "val_acc": 76.1,
+          "test_acc": 76.7,
+          "loss_cls": 0.6490819321274758,
+          "loss_dom": 3.789899824142456
+        },
+        {
+          "epoch": 2,
+          "val_acc": 79.2,
+          "test_acc": 79.1,
+          "loss_cls": 0.394176351202031,
+          "loss_dom": 5.195173966407776
+        },
+        {
+          "epoch": 3,
+          "val_acc": 75.0,
+          "test_acc": 76.4,
+          "loss_cls": 0.24294957644150902,
+          "loss_dom": 3.132426154772441
+        },
+        {
+          "epoch": 4,
+          "val_acc": 80.6,
+          "test_acc": 78.9,
+          "loss_cls": 0.12838337003455186,
+          "loss_dom": 2.758858322461446
+        },
+        {
+          "epoch": 5,
+          "val_acc": 77.6,
+          "test_acc": 78.6,
+          "loss_cls": 0.16005497904107868,
+          "loss_dom": 6.824851862589518
+        },
+        {
+          "epoch": 6,
+          "val_acc": 79.0,
+          "test_acc": 80.0,
+          "loss_cls": 0.10102738388334273,
+          "loss_dom": 3.1178491837183633
+        },
+        {
+          "epoch": 7,
+          "val_acc": 80.3,
+          "test_acc": 78.4,
+          "loss_cls": 0.053724009343564035,
+          "loss_dom": 2.758714660962423
+        },
+        {
+          "epoch": 8,
+          "val_acc": 79.9,
+          "test_acc": 79.5,
+          "loss_cls": 0.03984673739847979,
+          "loss_dom": 2.795103332519531
+        },
+        {
+          "epoch": 9,
+          "val_acc": 80.0,
+          "test_acc": 79.7,
+          "loss_cls": 0.06106728494508648,
+          "loss_dom": 3.9103598953882854
+        },
+        {
+          "epoch": 10,
+          "val_acc": 69.4,
+          "test_acc": 71.5,
+          "loss_cls": 0.07218408024599464,
+          "loss_dom": 39.851268459955854
+        },
+        {
+          "epoch": 11,
+          "val_acc": 77.5,
+          "test_acc": 78.8,
+          "loss_cls": 0.16222390788523333,
+          "loss_dom": 32.039609694163005
+        },
+        {
+          "epoch": 12,
+          "val_acc": 79.3,
+          "test_acc": 80.7,
+          "loss_cls": 0.17050784167940972,
+          "loss_dom": 4.5020996961593625
+        },
+        {
+          "epoch": 13,
+          "val_acc": 79.4,
+          "test_acc": 79.5,
+          "loss_cls": 0.04283456770915031,
+          "loss_dom": 2.970271157582601
+        },
+        {
+          "epoch": 14,
+          "val_acc": 79.2,
+          "test_acc": 80.0,
+          "loss_cls": 0.061113928485796484,
+          "loss_dom": 2.818994318962097
+        }
+      ]
+    },
+    "electronics": {
+      "target_domain": "electronics",
+      "source_domains": [
+        "books",
+        "dvd",
+        "kitchen"
+      ],
+      "best_val_acc": 85.8,
+      "best_test_acc": 81.8,
+      "training_time_min": 4.82,
+      "history": [
+        {
+          "epoch": 1,
+          "val_acc": 79.9,
+          "test_acc": 75.1,
+          "loss_cls": 0.6542203468084336,
+          "loss_dom": 3.8302432352701823
+        },
+        {
+          "epoch": 2,
+          "val_acc": 83.1,
+          "test_acc": 78.6,
+          "loss_cls": 0.37111430468658607,
+          "loss_dom": 3.436441922823588
+        },
+        {
+          "epoch": 3,
+          "val_acc": 85.8,
+          "test_acc": 81.8,
+          "loss_cls": 0.1923847412876785,
+          "loss_dom": 5.178164605776469
+        },
+        {
+          "epoch": 4,
+          "val_acc": 84.3,
+          "test_acc": 82.8,
+          "loss_cls": 0.2804618037774926,
+          "loss_dom": 7.433942578951518
+        },
+        {
+          "epoch": 5,
+          "val_acc": 83.6,
+          "test_acc": 80.1,
+          "loss_cls": 0.12696087202999237,
+          "loss_dom": 2.7791560866038005
+        },
+        {
+          "epoch": 6,
+          "val_acc": 85.2,
+          "test_acc": 81.8,
+          "loss_cls": 0.07128238717224607,
+          "loss_dom": 2.61842347685496
+        },
+        {
+          "epoch": 7,
+          "val_acc": 84.8,
+          "test_acc": 81.6,
+          "loss_cls": 0.0409896720194403,
+          "loss_dom": 2.5825251057942706
+        },
+        {
+          "epoch": 8,
+          "val_acc": 84.6,
+          "test_acc": 80.3,
+          "loss_cls": 0.03420797583627155,
+          "loss_dom": 2.5885116214752197
+        },
+        {
+          "epoch": 9,
+          "val_acc": 84.7,
+          "test_acc": 80.9,
+          "loss_cls": 0.025993558917741362,
+          "loss_dom": 2.580714371363322
+        },
+        {
+          "epoch": 10,
+          "val_acc": 84.6,
+          "test_acc": 79.1,
+          "loss_cls": 0.00945924640438189,
+          "loss_dom": 2.577072506904602
+        },
+        {
+          "epoch": 11,
+          "val_acc": 83.5,
+          "test_acc": 79.4,
+          "loss_cls": 0.012028299861593155,
+          "loss_dom": 2.567647565205892
+        },
+        {
+          "epoch": 12,
+          "val_acc": 84.5,
+          "test_acc": 80.8,
+          "loss_cls": 0.01733811117695086,
+          "loss_dom": 2.595086435317993
+        },
+        {
+          "epoch": 13,
+          "val_acc": 80.3,
+          "test_acc": 78.0,
+          "loss_cls": 0.012690353770804194,
+          "loss_dom": 3.5933797340393068
+        }
+      ]
+    },
+    "kitchen": {
+      "target_domain": "kitchen",
+      "source_domains": [
+        "books",
+        "dvd",
+        "electronics"
+      ],
+      "best_val_acc": 86.3,
+      "best_test_acc": 85.3,
+      "training_time_min": 12.76,
+      "history": [
+        {
+          "epoch": 1,
+          "val_acc": 84.6,
+          "test_acc": 83.4,
+          "loss_cls": 0.6692272403637568,
+          "loss_dom": 3.904156914393107
+        },
+        {
+          "epoch": 2,
+          "val_acc": 83.9,
+          "test_acc": 85.1,
+          "loss_cls": 0.43312115090588726,
+          "loss_dom": 3.719646679242452
+        },
+        {
+          "epoch": 3,
+          "val_acc": 85.1,
+          "test_acc": 86.0,
+          "loss_cls": 0.2488744988910233,
+          "loss_dom": 3.8251566219329836
+        },
+        {
+          "epoch": 4,
+          "val_acc": 78.9,
+          "test_acc": 79.8,
+          "loss_cls": 0.20562597153366854,
+          "loss_dom": 9.815406877835592
+        },
+        {
+          "epoch": 5,
+          "val_acc": 83.8,
+          "test_acc": 83.6,
+          "loss_cls": 0.33036745260857664,
+          "loss_dom": 5.759529557228088
+        },
+        {
+          "epoch": 6,
+          "val_acc": 84.5,
+          "test_acc": 83.4,
+          "loss_cls": 0.14401194436692216,
+          "loss_dom": 2.908088219642639
+        },
+        {
+          "epoch": 7,
+          "val_acc": 85.1,
+          "test_acc": 84.7,
+          "loss_cls": 0.0629232297615569,
+          "loss_dom": 2.728896536509196
+        },
+        {
+          "epoch": 8,
+          "val_acc": 85.6,
+          "test_acc": 84.8,
+          "loss_cls": 0.055870267399064685,
+          "loss_dom": 2.653024497350057
+        },
+        {
+          "epoch": 9,
+          "val_acc": 85.1,
+          "test_acc": 84.6,
+          "loss_cls": 0.0375381957096068,
+          "loss_dom": 2.6134685570398966
+        },
+        {
+          "epoch": 10,
+          "val_acc": 84.4,
+          "test_acc": 84.6,
+          "loss_cls": 0.02563924223088863,
+          "loss_dom": 2.5886283864974975
+        },
+        {
+          "epoch": 11,
+          "val_acc": 85.1,
+          "test_acc": 84.9,
+          "loss_cls": 0.018854405398624093,
+          "loss_dom": 2.5884807895024617
+        },
+        {
+          "epoch": 12,
+          "val_acc": 85.3,
+          "test_acc": 85.1,
+          "loss_cls": 0.010465926253495125,
+          "loss_dom": 2.5673073536554973
+        },
+        {
+          "epoch": 13,
+          "val_acc": 85.7,
+          "test_acc": 85.3,
+          "loss_cls": 0.008184863416010536,
+          "loss_dom": 2.5650652872721356
+        },
+        {
+          "epoch": 14,
+          "val_acc": 85.2,
+          "test_acc": 84.9,
+          "loss_cls": 0.011138429328358446,
+          "loss_dom": 2.56259955183665
+        },
+        {
+          "epoch": 15,
+          "val_acc": 84.7,
+          "test_acc": 84.9,
+          "loss_cls": 0.008468496043596788,
+          "loss_dom": 2.58044904645284
+        },
+        {
+          "epoch": 16,
+          "val_acc": 83.4,
+          "test_acc": 84.3,
+          "loss_cls": 0.011189194333686996,
+          "loss_dom": 2.563895702044169
+        },
+        {
+          "epoch": 17,
+          "val_acc": 84.0,
+          "test_acc": 84.5,
+          "loss_cls": 0.0033141920434333894,
+          "loss_dom": 2.563836805979411
+        },
+        {
+          "epoch": 18,
+          "val_acc": 83.8,
+          "test_acc": 84.3,
+          "loss_cls": 0.002274878325640271,
+          "loss_dom": 2.5509347171783445
+        },
+        {
+          "epoch": 19,
+          "val_acc": 84.6,
+          "test_acc": 84.5,
+          "loss_cls": 0.007682284254276129,
+          "loss_dom": 2.5699209728240966
+        },
+        {
+          "epoch": 20,
+          "val_acc": 78.8,
+          "test_acc": 78.4,
+          "loss_cls": 0.0021444794046007565,
+          "loss_dom": 8.613551572481791
+        },
+        {
+          "epoch": 21,
+          "val_acc": 77.5,
+          "test_acc": 78.7,
+          "loss_cls": 0.029783404510181532,
+          "loss_dom": 72.7245895652771
+        },
+        {
+          "epoch": 22,
+          "val_acc": 86.2,
+          "test_acc": 83.1,
+          "loss_cls": 0.08040369515872448,
+          "loss_dom": 31.81058233356476
+        },
+        {
+          "epoch": 23,
+          "val_acc": 86.2,
+          "test_acc": 85.1,
+          "loss_cls": 0.05702143559345607,
+          "loss_dom": 30.323811088879904
+        },
+        {
+          "epoch": 24,
+          "val_acc": 85.0,
+          "test_acc": 85.4,
+          "loss_cls": 0.0766281382569373,
+          "loss_dom": 27.671292717615763
+        },
+        {
+          "epoch": 25,
+          "val_acc": 86.3,
+          "test_acc": 85.3,
+          "loss_cls": 0.06357023785642721,
+          "loss_dom": 17.62630226421356
+        },
+        {
+          "epoch": 26,
+          "val_acc": 86.1,
+          "test_acc": 85.0,
+          "loss_cls": 0.09551844018749635,
+          "loss_dom": 11.782011554400126
+        },
+        {
+          "epoch": 27,
+          "val_acc": 85.4,
+          "test_acc": 85.6,
+          "loss_cls": 0.06375957997052036,
+          "loss_dom": 5.514539642333984
+        },
+        {
+          "epoch": 28,
+          "val_acc": 84.7,
+          "test_acc": 85.2,
+          "loss_cls": 0.03284809803144626,
+          "loss_dom": 3.7268070055643716
+        },
+        {
+          "epoch": 29,
+          "val_acc": 85.0,
+          "test_acc": 84.5,
+          "loss_cls": 0.06969072969624009,
+          "loss_dom": 3.000120724995931
+        },
+        {
+          "epoch": 30,
+          "val_acc": 84.9,
+          "test_acc": 84.4,
+          "loss_cls": 0.039907643426014175,
+          "loss_dom": 2.8538987296422325
+        },
+        {
+          "epoch": 31,
+          "val_acc": 84.3,
+          "test_acc": 85.7,
+          "loss_cls": 0.0071187565097913415,
+          "loss_dom": 2.7772652842203778
+        },
+        {
+          "epoch": 32,
+          "val_acc": 84.5,
+          "test_acc": 85.5,
+          "loss_cls": 0.02215873490545449,
+          "loss_dom": 2.6962579498291017
+        },
+        {
+          "epoch": 33,
+          "val_acc": 84.2,
+          "test_acc": 85.2,
+          "loss_cls": 0.019131102696079642,
+          "loss_dom": 2.6621098194122315
+        },
+        {
+          "epoch": 34,
+          "val_acc": 84.2,
+          "test_acc": 84.7,
+          "loss_cls": 0.005901356775426084,
+          "loss_dom": 2.64808119392395
+        },
+        {
+          "epoch": 35,
+          "val_acc": 84.6,
+          "test_acc": 85.0,
+          "loss_cls": 0.003693649025433853,
+          "loss_dom": 2.610602344830831
+        }
+      ]
+    }
+  },
+  "summary": {
+    "books": {
+      "our_acc": 78.9,
+      "paper_acc": 79.39,
+      "gap": -0.49
+    },
+    "dvd": {
+      "our_acc": 78.9,
+      "paper_acc": 80.14,
+      "gap": -1.24
+    },
+    "electronics": {
+      "our_acc": 81.8,
+      "paper_acc": 83.81,
+      "gap": -2.01
+    },
+    "kitchen": {
+      "our_acc": 85.3,
+      "paper_acc": 87.66,
+      "gap": -2.36
+    }
+  },
+  "our_avg": 81.225,
+  "paper_avg": 82.75,
+  "avg_gap": -1.525,
+  "total_time_min": 27.96
+}

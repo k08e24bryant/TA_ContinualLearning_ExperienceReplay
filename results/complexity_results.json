@@ -1,0 +1,56 @@
+{
+  "oracle": {
+    "method": "Oracle (Joint Training)",
+    "training_time_sec": 1771.9,
+    "training_time_min": 29.53,
+    "peak_gpu_memory_mb": 228.26,
+    "total_iterations": 22500,
+    "estimated_flops": 23468728320000,
+    "estimated_gflops": 23468.73,
+    "epochs": 30,
+    "samples_per_epoch": 6000,
+    "big_o_time": "O(N \u00d7 K \u00d7 E \u00d7 nc)",
+    "big_o_space": "O(N \u00d7 K \u00d7 D)",
+    "relative_time": 1.0,
+    "relative_memory": 1.0
+  },
+  "naive": {
+    "method": "Naive Sequential",
+    "training_time_sec": 88.22,
+    "training_time_min": 1.47,
+    "peak_gpu_memory_mb": 144.23,
+    "total_iterations": 7500,
+    "estimated_flops": 7822909440000,
+    "estimated_gflops": 7822.91,
+    "epochs_per_timestep": 10,
+    "num_timesteps": 3,
+    "big_o_time": "O(N \u00d7 K \u00d7 E_s \u00d7 nc)",
+    "big_o_space": "O(N \u00d7 D)",
+    "relative_time": 0.05,
+    "relative_memory": 0.632
+  },
+  "replay": {
+    "method": "Experience Replay",
+    "training_time_sec": 135.09,
+    "training_time_min": 2.25,
+    "peak_gpu_memory_mb": 228.44,
+    "total_iterations": 7500,
+    "replay_iterations": 5000,
+    "estimated_flops": 13038182400000,
+    "estimated_gflops": 13038.18,
+    "epochs_per_timestep": 10,
+    "num_timesteps": 3,
+    "buffer_capacity": 500,
+    "buffer_ratio": 8.33,
+    "big_o_time": "O((N+B) \u00d7 K \u00d7 E_s \u00d7 nc)",
+    "big_o_space": "O((N+B) \u00d7 D)",
+    "relative_time": 0.076,
+    "relative_memory": 1.001
+  },
+  "comparison": {
+    "replay_vs_oracle_time_reduction": "92.4%",
+    "replay_vs_oracle_memory_reduction": "-0.1%",
+    "replay_overhead_vs_naive_time": "52.0%",
+    "buffer_ratio_of_total_data": "8.33%"
+  }
+}

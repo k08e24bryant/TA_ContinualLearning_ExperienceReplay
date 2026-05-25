@@ -1,0 +1,65 @@
+{
+  "run_id": "B4",
+  "group": "B",
+  "method": "Experience Replay (Ablation)",
+  "configuration": {
+    "buffer_size": 1000,
+    "beta": 1.0,
+    "epochs_per_t": 10,
+    "batch_size": 8,
+    "lr": 0.0001,
+    "lambda_adv": 0.1,
+    "lambda_priv": 0.1
+  },
+  "source_domains": [
+    "books",
+    "dvd",
+    "electronics"
+  ],
+  "target_domain": "kitchen",
+  "results_over_time": [
+    {
+      "timestep": 1,
+      "new_domain": "books",
+      "accuracies": {
+        "books": 99.95,
+        "kitchen": 75.9
+      },
+      "buffer_size": 333
+    },
+    {
+      "timestep": 2,
+      "new_domain": "dvd",
+      "accuracies": {
+        "books": 97.9,
+        "dvd": 95.9,
+        "kitchen": 80.9
+      },
+      "buffer_size": 666
+    },
+    {
+      "timestep": 3,
+      "new_domain": "electronics",
+      "accuracies": {
+        "books": 96.7,
+        "dvd": 94.7,
+        "electronics": 90.95,
+        "kitchen": 84.3
+      },
+      "buffer_size": 999
+    }
+  ],
+  "forgetting_metrics": {
+    "books": 3.25,
+    "dvd": 1.2,
+    "average": 2.225
+  },
+  "final_accuracies": {
+    "books": 96.7,
+    "dvd": 94.7,
+    "electronics": 90.95,
+    "kitchen": 84.3
+  },
+  "avg_source_acc": 94.1167,
+  "training_time_min": 3.89
+}

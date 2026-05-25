@@ -1,0 +1,112 @@
+{
+  "method": "WS-UDA Paper Replication (Leave-One-Out)",
+  "reference": "Dai et al. (2020) AAAI",
+  "setting": "Leave-one-out: 4 runs, each domain as target once",
+  "configuration": {
+    "batch_size": 8,
+    "lr": 0.0001,
+    "n_critic": 5,
+    "lambda_adv": 1.0,
+    "discriminator": "multi-class (4 classes)",
+    "unlabeled_target_in_training": true
+  },
+  "per_run_metrics": {
+    "books": {
+      "target_domain": "books",
+      "source_domains": [
+        "dvd",
+        "electronics",
+        "kitchen"
+      ],
+      "measured_epochs": 5,
+      "actual_epochs": 15,
+      "training_time_sec": 318.0,
+      "training_time_min": 5.3,
+      "peak_gpu_memory_mb": 228.41,
+      "total_iterations": 11250,
+      "estimated_flops": 11734640640000,
+      "estimated_gflops": 11734.64,
+      "flops_per_iter": 1043079168,
+      "num_source_domains": 3,
+      "discriminator_classes": 4,
+      "big_o_time": "O(N \u00d7 K \u00d7 E \u00d7 nc) per run \u00d7 (K+1) runs",
+      "big_o_space": "O((N\u00d7K + N_target) \u00d7 D)"
+    },
+    "dvd": {
+      "target_domain": "dvd",
+      "source_domains": [
+        "books",
+        "electronics",
+        "kitchen"
+      ],
+      "measured_epochs": 5,
+      "actual_epochs": 14,
+      "training_time_sec": 302.4,
+      "training_time_min": 5.04,
+      "peak_gpu_memory_mb": 228.41,
+      "total_iterations": 10500,
+      "estimated_flops": 10952331264000,
+      "estimated_gflops": 10952.33,
+      "flops_per_iter": 1043079168,
+      "num_source_domains": 3,
+      "discriminator_classes": 4,
+      "big_o_time": "O(N \u00d7 K \u00d7 E \u00d7 nc) per run \u00d7 (K+1) runs",
+      "big_o_space": "O((N\u00d7K + N_target) \u00d7 D)"
+    },
+    "electronics": {
+      "target_domain": "electronics",
+      "source_domains": [
+        "books",
+        "dvd",
+        "kitchen"
+      ],
+      "measured_epochs": 5,
+      "actual_epochs": 13,
+      "training_time_sec": 289.20000000000005,
+      "training_time_min": 4.82,
+      "peak_gpu_memory_mb": 228.41,
+      "total_iterations": 9750,
+      "estimated_flops": 10170021888000,
+      "estimated_gflops": 10170.02,
+      "flops_per_iter": 1043079168,
+      "num_source_domains": 3,
+      "discriminator_classes": 4,
+      "big_o_time": "O(N \u00d7 K \u00d7 E \u00d7 nc) per run \u00d7 (K+1) runs",
+      "big_o_space": "O((N\u00d7K + N_target) \u00d7 D)"
+    },
+    "kitchen": {
+      "target_domain": "kitchen",
+      "source_domains": [
+        "books",
+        "dvd",
+        "electronics"
+      ],
+      "measured_epochs": 5,
+      "actual_epochs": 35,
+      "training_time_sec": 765.6,
+      "training_time_min": 12.76,
+      "peak_gpu_memory_mb": 228.41,
+      "total_iterations": 26250,
+      "estimated_flops": 27380828160000,
+      "estimated_gflops": 27380.83,
+      "flops_per_iter": 1043079168,
+      "num_source_domains": 3,
+      "discriminator_classes": 4,
+      "big_o_time": "O(N \u00d7 K \u00d7 E \u00d7 nc) per run \u00d7 (K+1) runs",
+      "big_o_space": "O((N\u00d7K + N_target) \u00d7 D)"
+    }
+  },
+  "aggregate": {
+    "total_training_time_sec": 1675.2,
+    "total_training_time_min": 27.92,
+    "peak_gpu_memory_mb": 228.41,
+    "total_iterations": 57750,
+    "estimated_flops": 60237821952000,
+    "estimated_gflops": 60237.82,
+    "big_o_time": "O(N \u00d7 K \u00d7 E \u00d7 nc) \u00d7 (K+1) LOO runs",
+    "big_o_space": "O((N\u00d7K + N_target) \u00d7 D)",
+    "relative_time_vs_oracle": 0.945,
+    "relative_memory_vs_oracle": 1.001
+  },
+  "comparison_note": "WS-UDA paper runs 4 separate experiments (LOO) vs sequential methods that run once. Total time reflects full evaluation protocol."
+}

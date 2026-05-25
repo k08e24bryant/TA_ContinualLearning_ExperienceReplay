@@ -5,7 +5,7 @@ Sequential Multi-Source Domain Adaptation - Sentiment Analysis
 Uses separate buffer per domain to ensure fair representation.
 Each domain gets equal slots (capacity // num_domains) in the buffer.
 
-FIX: Buffer now uses actual domain_id passed at store time,
+Buffer now uses actual domain_id passed at store time,
 not the domain label in the data (which resets to 0 per loader).
 
 Reference: Rebuffi et al. (2017) iCaRL
